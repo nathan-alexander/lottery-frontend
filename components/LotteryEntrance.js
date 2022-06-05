@@ -83,7 +83,7 @@ export default function LotteryEntrance() {
             {lotteryAddress ? (
                 <div>
                     <button
-                        className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded ml-auto"
+                        className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded-full ml-auto"
                         onClick={async function () {
                             await enterRaffle({
                                 onSuccess: handleSuccess,
@@ -98,9 +98,17 @@ export default function LotteryEntrance() {
                             <div>Enter Lottery</div>
                         )}
                     </button>
-                    <div>Entrance Fee: {ethers.utils.formatUnits(entranceFee, "ether")}</div>
-                    <div>Number of Players: {numPlayers}</div>
-                    <div>Recent Winner: {recentWinner}</div>
+                    <div className="rounded my-4 border-2 border-blue-500/100 w-1/4 bg-sky-500/70">
+                        <div className="p-2 font-mono text-white">
+                            Entrance Fee: {ethers.utils.formatUnits(entranceFee, "ether")}
+                        </div>
+                        <div className="p-2 font-mono text-white">
+                            Number of Players: {numPlayers}
+                        </div>
+                        <div className="p-2 font-mono text-white">
+                            Recent Winner: <span className="text-white">{recentWinner}</span>
+                        </div>
+                    </div>
                 </div>
             ) : (
                 <div>No lottery address detected</div>

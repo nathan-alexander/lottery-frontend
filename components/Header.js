@@ -3,7 +3,11 @@ import { ConnectButton } from "web3uikit"
 export default function Header() {
     return (
         <div className="border-b-2 flex flex-row">
-            <h1 className="py-4 px-4 font-blog text-3xl">Decentralized Lottery</h1>
+            <div className="text-5xl font-extrabold ...">
+                <span className="bg-clip-text text-transparent bg-gradient-to-r from-sky-500 to-blue-500">
+                    Decentralized Lottery
+                </span>
+            </div>
             <div className="ml-auto py-2 px-4">
                 <ConnectButton />
             </div>
